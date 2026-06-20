@@ -36,8 +36,8 @@ export default function ContactPage() {
 
   // Run calculation whenever estimator inputs change
   useEffect(() => {
-    const t = parseFloat(tonnage) || 0;
-    if (t <= 0) {
+    const tons = parseFloat(tonnage) || 0;
+    if (tons <= 0) {
       setTotalBoxes(0);
       setContainerRecommend(t("contact.minFclWarning"));
       setProductionDays(0);
@@ -48,7 +48,7 @@ export default function ContactPage() {
     }
 
     // 10kg master cartons
-    setTotalBoxes(Math.ceil(t * 1000 / 10));
+    setTotalBoxes(Math.ceil(tons * 1000 / 10));
 
     // Container calculation logic
     let limit20ft = loadingMethod === "loose" ? 18.0 : 15.5;
@@ -58,37 +58,37 @@ export default function ContactPage() {
     let maxCap = limit20ft;
     let containerName = "20 FT FCL";
 
-    if (t < limit20ft * 0.8) {
+    if (tons < limit20ft * 0.8) {
       const lclText = t("contact.lclRecommend").replace("{limit}", limit20ft.toString());
       setContainerRecommend(lclText);
       setProductionDays(15);
       
       maxCap = limit20ft;
       containerName = "20 FT FCL";
-      setFillPercent(Math.round((t / maxCap) * 100));
+      setFillPercent(Math.round((tons / maxCap) * 100));
       setVisualLabel("20 FT FCL");
       setLoadStatus("underload");
-    } else if (t <= limit20ft) {
+    } else if (tons <= limit20ft) {
       setContainerRecommend(t("contact.container20"));
       setProductionDays(20);
 
       maxCap = limit20ft;
       containerName = "20 FT FCL";
-      setFillPercent(Math.round((t / maxCap) * 100));
+      setFillPercent(Math.round((tons / maxCap) * 100));
       setVisualLabel("20 FT FCL");
       setLoadStatus("good");
-    } else if (t <= limit40ft) {
+    } else if (tons <= limit40ft) {
       setContainerRecommend(t("contact.container40"));
       setProductionDays(30);
 
       maxCap = limit40ft;
       containerName = "40 FT HC";
-      setFillPercent(Math.round((t / maxCap) * 100));
+      setFillPercent(Math.round((tons / maxCap) * 100));
       setVisualLabel("40 FT HC");
-      setLoadStatus(t < limit40ft * 0.85 ? "underload" : "good");
+      setLoadStatus(tons < limit40ft * 0.85 ? "underload" : "good");
     } else {
-      const num40ft = Math.floor(t / limit40ft);
-      const remainder = t % limit40ft;
+      const num40ft = Math.floor(tons / limit40ft);
+      const remainder = tons % limit40ft;
       
       let containerText = `${num40ft} x 40 FT HC`;
       maxCap = num40ft * limit40ft;
@@ -105,7 +105,7 @@ export default function ContactPage() {
       setContainerRecommend(containerText);
       setProductionDays(Math.max(35, Math.ceil(num40ft * 25)));
 
-      setFillPercent(Math.round((t / maxCap) * 100));
+      setFillPercent(Math.round((tons / maxCap) * 100));
       setVisualLabel(containerText);
       setLoadStatus("good");
     }
