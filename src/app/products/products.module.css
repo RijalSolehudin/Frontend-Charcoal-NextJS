@@ -1,0 +1,206 @@
+.pageHeader {
+  padding: 80px 0 60px 0;
+  text-align: center;
+  background: linear-gradient(180deg, #090909 0%, #050505 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contentSection {
+  padding: 80px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+.productCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.productCard:hover {
+  border-color: var(--border-color-glow);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(255, 85, 0, 0.05);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: #000;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: var(--transition-smooth);
+}
+
+.productCard:hover .cardImage {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.cardContent {
+  padding: 40px;
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  background: rgba(255, 85, 0, 0.1);
+  border: 1px solid rgba(255, 85, 0, 0.2);
+  color: var(--accent-amber);
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 0.98rem;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.specLabel {
+  color: var(--text-secondary);
+}
+
+.specValue {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sizesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sizeBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.sizeVal {
+  font-weight: 700;
+  color: var(--accent-orange);
+  margin-bottom: 4px;
+}
+
+.sizeName {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+/* Shipping / Loading Table Section */
+.shippingSection {
+  padding: 80px 0;
+  background-color: #080808;
+  border-y: 1px solid var(--border-color);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: var(--bg-secondary);
+}
+
+.shipTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.shipTable th, 
+.shipTable td {
+  padding: 18px 24px;
+}
+
+.shipTable th {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.shipTable tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.shipTable tr:hover td {
+  background: rgba(255, 85, 0, 0.01);
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .cardContent {
+    padding: 24px;
+  }
+}
