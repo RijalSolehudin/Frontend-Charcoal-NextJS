@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./page.module.css";
+import shapesImg from "../../public/charcoal_shapes.png";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -148,7 +149,7 @@ export default function Home() {
           
           <div className={styles.specsVisual}>
             <Image 
-              src="/charcoal_shapes.png" 
+              src={shapesImg} 
               alt="Premium Coconut Charcoal Briquettes Shapes"
               width={600}
               height={600}

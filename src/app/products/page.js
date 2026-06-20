@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./products.module.css";
+import shapesImg from "../../../public/charcoal_shapes.png";
+import factoryImg from "../../../public/charcoal_factory.png";
 
 export default function ProductsPage() {
   const { language, t } = useLanguage();
@@ -68,7 +70,7 @@ export default function ProductsPage() {
             <div className={styles.productCard} id="shisha">
               <div className={styles.cardImageWrapper}>
                 <Image 
-                  src="/charcoal_shapes.png" 
+                  src={shapesImg} 
                   alt="Shisha Coconut Charcoal Briquettes"
                   fill
                   className={styles.cardImage}
@@ -109,7 +111,7 @@ export default function ProductsPage() {
             <div className={styles.productCard} id="barbecue">
               <div className={styles.cardImageWrapper}>
                 <Image 
-                  src="/charcoal_factory.png" 
+                  src={factoryImg} 
                   alt="BBQ Coconut Charcoal Briquettes"
                   fill
                   className={styles.cardImage}

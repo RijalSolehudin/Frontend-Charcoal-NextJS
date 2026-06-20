@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./gallery.module.css";
+import heroImg from "../../../public/charcoal_hero.png";
+import shapesImg from "../../../public/charcoal_shapes.png";
+import factoryImg from "../../../public/charcoal_factory.png";
 
 export default function GalleryPage() {
   const { t } = useLanguage();
@@ -13,37 +16,37 @@ export default function GalleryPage() {
 
   const galleryItems = [
     {
-      src: "/charcoal_hero.png",
+      src: heroImg,
       category: "products",
       categoryLabel: t("gallery.items.0.label"),
       title: t("gallery.items.0.title")
     },
     {
-      src: "/charcoal_shapes.png",
+      src: shapesImg,
       category: "shapes",
       categoryLabel: t("gallery.items.1.label"),
       title: t("gallery.items.1.title")
     },
     {
-      src: "/charcoal_factory.png",
+      src: factoryImg,
       category: "factory",
       categoryLabel: t("gallery.items.2.label"),
       title: t("gallery.items.2.title")
     },
     {
-      src: "/charcoal_hero.png",
+      src: heroImg,
       category: "factory",
       categoryLabel: t("gallery.items.3.label"),
       title: t("gallery.items.3.title")
     },
     {
-      src: "/charcoal_shapes.png",
+      src: shapesImg,
       category: "products",
       categoryLabel: t("gallery.items.4.label"),
       title: t("gallery.items.4.title")
     },
     {
-      src: "/charcoal_factory.png",
+      src: factoryImg,
       category: "shapes",
       categoryLabel: t("gallery.items.5.label"),
       title: t("gallery.items.5.title")
