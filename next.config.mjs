@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   basePath: '/Frontend-Charcoal-NextJS',
   assetPrefix: '/Frontend-Charcoal-NextJS/',
   images: {
